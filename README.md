@@ -6,7 +6,7 @@
 
 ### Description
 
-*Forked to add some minor changes, like the ability to enable the "-m" argument for ignoring the minor warnings.
+*MR: Forked to add some minor changes, like the ability to enable the "-m" argument for ignoring the minor warnings.*
 
 *The goal and main features of this fork did not changed, so this description is the same as the original library*
 
