@@ -182,6 +182,7 @@ public class ExifToolBuilder {
 	 * Pool size.
 	 */
 	private int poolSize;
+        
 
 	public ExifToolBuilder() {
 	}
