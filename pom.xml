@@ -48,12 +48,17 @@
 			<name>Mickael Jeanroy</name>
 			<email>mickael.jeanroy@gmail.com</email>
 		</developer>
+		<developer>
+			<id>mristuccia</id>
+			<name>Marco Ristuccia</name>
+			<email>it-services@marcoristuccia.com</email>
+		</developer>
 	</developers>
 
 	<scm>
-		<connection>scm:git:git@github.com:mjeanroy/exiftool.git</connection>
-		<developerConnection>scm:git:git@github.com:mjeanroy/exiftool.git</developerConnection>
-		<url>https://github.com/mjeanroy/exiftool</url>
+		<connection>scm:git:git@github.com:mristuccia/exiftool.git</connection>
+		<developerConnection>scm:git:git@github.com:mristuccia/exiftool.git</developerConnection>
+		<url>https://github.com/mristuccia/exiftool</url>
 	  <tag>HEAD</tag>
   </scm>
 
@@ -71,7 +76,7 @@
 	</distributionManagement>
 
 	<properties>
-		<java-module-name>com.github.mjeanroy.exiftool</java-module-name>
+		<java-module-name>com.github.mristuccia.exiftool</java-module-name>
 
 		<!-- Settings -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
