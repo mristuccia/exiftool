@@ -5,6 +5,7 @@
 *MR: Forked to add some features for personal need:
 
 1. Added the ability to pass extra flags. For now only the IGNOR_MINOR flag is supported. Sample:
+
     List<Flag> flagList = new List<>();
     flagList.add(StandardFlag.IGNORE_MINOR);
     exiftool.setImageMeta(file, StandardFormat.HUMAN_READABLE, flagList, tagMap)
