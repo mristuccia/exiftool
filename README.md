@@ -2,7 +2,12 @@
 
 ### Description
 
-*MR: Forked to add some minor changes, like the ability to enable the "-m" argument for ignoring the minor warnings.*
+*MR: Forked to add some features for personal need:
+
+1. Added the ability to pass extra flags. For now only the IGNOR_MINOR flag is supported. Sample:
+    List<Flag> flagList = new List<>();
+    flagList.add(StandardFlag.IGNORE_MINOR);
+    exiftool.setImageMeta(file, StandardFormat.HUMAN_READABLE, flagList, tagMap)
 
 *The goal and main features of this fork did not changed, so this description is the same as the original library*
 
