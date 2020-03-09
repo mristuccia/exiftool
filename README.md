@@ -4,7 +4,8 @@
 
 *MR: Forked to add some features for personal need:
 
-1. Added the ability to pass extra flags. For now only the IGNOR_MINOR flag is supported. Sample:
+1. Added the ability to pass extra flags. For now only the "IGNORE_MINOR" flag is supported, more will come.
+   Sample:
 
 ----
     List<Flag> flagList = new List<>();
