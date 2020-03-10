@@ -1,6 +1,4 @@
 /**
- * Copyright 2011 The Buzz Media, LLC
- * Copyright 2015-2019 Mickael Jeanroy
  * Copyright 2020 Marco Ristuccia
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,29 +16,24 @@
 
 package com.thebuzzmedia.exiftool;
 
+import java.util.List;
+
 /**
- * List of constants used with Exiftool.
+ * Interface used to define different input flags.
+ *
+ * @author Marco Ristuccia (it-services@marcoristuccia.com)
+ * @author Mickael Jeanroy
+ * @since 2.5.1
  */
-public final class Constants {
-
-	// Ensure non instantiation.
-	private Constants() {
-	}
+public interface Argument {
 
 	/**
-	 * Separator used to separate values.
-	 * This separator should be enough to split values and be sure it is not
-	 * reused anywhere.
+	 * List of arguments to pass to {@code exiftool}.
+	 * This method should not return {@code null}, but an empty list if no arguments
+	 * should be returned.
+	 *
+	 * @return List of arguments.
 	 */
-	public static final String SEPARATOR = "|>☃";
-
-	/**
-	 * OS independent line break.
-	 */
-	public static final String BR = System.getProperty("line.separator");
+        List<String> getArgs();
         
-        /**
-         * Extra argument's separator
-         */
-        public static final String ARG_SEPARATOR = " ";
 }

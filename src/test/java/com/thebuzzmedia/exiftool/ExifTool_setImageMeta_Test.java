@@ -111,13 +111,27 @@ public class ExifTool_setImageMeta_Test {
 		ThrowingCallable setImageMeta = new ThrowingCallable() {
 			@Override
 			public void call() throws Throwable {
-				exifTool.setImageMeta(mock(File.class), null, tags);
+				exifTool.setImageMeta(mock(File.class), (Format) null, tags);
 			}
 		};
 
 		assertThatThrownBy(setImageMeta)
 				.isInstanceOf(NullPointerException.class)
 				.hasMessage("Format cannot be null.");
+	}
+
+	@Test
+	public void it_should_fail_if_arguments_is_null() {
+		ThrowingCallable setImageMeta = new ThrowingCallable() {
+			@Override
+			public void call() throws Throwable {
+				exifTool.setImageMeta(mock(File.class), (List<Argument>) null, tags);
+			}
+		};
+
+		assertThatThrownBy(setImageMeta)
+				.isInstanceOf(NullPointerException.class)
+				.hasMessage("Arguments cannot be null.");
 	}
 
 	@Test

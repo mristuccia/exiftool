@@ -2,17 +2,20 @@
 
 ### Description
 
-*Marco Ristuccia: Forked to add some features for personal need:*
+*Marco Ristuccia: forked to add some features for personal need:*
 
-1. Added the ability to pass extra flags. For now only the "IGNORE_MINOR" flag is supported, more will come.
-   Sample:
+1. Added the ability to pass extra flags and arguments. For now only the
+   "IGNORE_MINOR" flag is pre-configured, but for non pre-configured args
+   there is the UnspecifiedArgument class.
+   Here a sample:
 
 ----
-    List<Flag> flagList = new List<>();
-    flagList.add(StandardFlag.IGNORE_MINOR);
-    exiftool.setImageMeta(file, StandardFormat.HUMAN_READABLE, flagList, tagMap)
+    List<Flag> argumentList = new List<>();
+    argumentList.add(StandardArgument.IGNORE_MINOR); // supported / pre-configured
+    arguments.add(new UnspecifiedArgument("-ext .cr2")); // format: "<name> <value>"
+    exiftool.setImageMeta(file, argumentList, tagMap)
 ----
-	
+
 *The goal and main features of this fork did not changed, so this description is the same as the original library*
 
 This project represents the most robust Java integrations with Phil Harvey's
