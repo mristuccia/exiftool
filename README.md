@@ -4,14 +4,14 @@
 
 *Marco Ristuccia: forked to add some features for personal need:*
 
-1. Added the ability to pass extra flags and arguments. For now only the
-   "IGNORE_MINOR" flag is pre-configured, but for non pre-configured args
-   there is the UnspecifiedArgument class.
+1. Added the ability to pass extra flags and arguments. 
+   So far only the "IGNORE_MINOR" flag is pre-configured, more will come.
+   But for custom arguments the class UnspecifiedArgument can be used.
    Here a sample:
 
 ----
     List<Flag> argumentList = new List<>();
-    argumentList.add(StandardArgument.IGNORE_MINOR); // supported / pre-configured
+    argumentList.add(StandardArgument.IGNORE_MINOR); // pre-configured
     arguments.add(new UnspecifiedArgument("-ext .cr2")); // format: "<name> <value>"
     exiftool.setImageMeta(file, argumentList, tagMap)
 ----
