@@ -19,6 +19,7 @@
 ## How to use this package with maven
 
 Put the following snipped into your pom.xml under the <dependencies> block:
+
 ----
 <dependency>
   <groupId>com.github.mristuccia</groupId>
