@@ -11,8 +11,8 @@
 
 ----
     List<Flag> argumentList = new List<>();
-    argumentList.add(StandardArgument.IGNORE_MINOR); // pre-configured
-    arguments.add(new UnspecifiedArgument("-ext .cr2")); // format: "<name> <value>" or "<flag>"
+    argumentList.add(StandardArgument.IGNORE_MINOR); // supported flag
+    arguments.add(new UnspecifiedArgument("-ext .cr2")); // custom argument/flag, format: "<name> <value>" or "<flag>"
     exiftool.setImageMeta(file, argumentList, tagMap)
 ----
 
