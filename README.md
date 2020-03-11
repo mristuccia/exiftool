@@ -9,12 +9,10 @@
    But for custom arguments the class UnspecifiedArgument can be used.
    Here a sample:
 
-----
     List<Flag> argumentList = new List<>();
     argumentList.add(StandardArgument.IGNORE_MINOR); // supported flag
     arguments.add(new UnspecifiedArgument("-ext .cr2")); // custom argument/flag, format: "<name> <value>" or "<flag>"
     exiftool.setImageMeta(file, argumentList, tagMap)
-----
 
 #### How to use this package with maven
 
