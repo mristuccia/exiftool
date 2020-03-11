@@ -20,7 +20,7 @@
 
 Put the following snipped into your pom.xml under the <dependencies> block:
 
-```maven
+```xml
     <dependency>
         <groupId>com.github.mristuccia</groupId>
         <artifactId>exiftool-lib</artifactId>
