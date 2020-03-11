@@ -2,7 +2,7 @@
 
 ### Description
 
-## *Marco Ristuccia: forked to add some features for personal need:*
+#### *Marco Ristuccia: forked to add some features for personal need:*
 
 1. Added the ability to pass extra flags and arguments. 
    So far only the "IGNORE_MINOR" flag is pre-configured, more will come.
@@ -16,19 +16,18 @@
     exiftool.setImageMeta(file, argumentList, tagMap)
 ----
 
-## How to use this package with maven
+#### How to use this package with maven
 
 Put the following snipped into your pom.xml under the <dependencies> block:
 
-----
-<dependency>
-  <groupId>com.github.mristuccia</groupId>
-  <artifactId>exiftool-lib</artifactId>
-  <version>2.5.2</version>
-</dependency>
-----
+    <dependency>
+        <groupId>com.github.mristuccia</groupId>
+        <artifactId>exiftool-lib</artifactId>
+        <version>2.5.2</version>
+    </dependency>
 
-## From the original README
+
+### From the original README
 
 *The goal and main features of this fork did not changed, so this description is the same as the original library*
 
