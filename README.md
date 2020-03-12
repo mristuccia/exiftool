@@ -2,25 +2,25 @@
 
 ### Description
 
-#### *Marco Ristuccia: forked to add some features for personal need:*
+#### Forked to add some features for personal need:
 
-1. Added the ability to pass extra flags and arguments. 
-   So far only the "IGNORE_MINOR" flag is pre-configured, more will come.
-   But for custom arguments the class UnspecifiedArgument can be used.
+Added the ability to pass extra flags and arguments. 
+So far only the "IGNORE_MINOR" flag is pre-configured, more will come,
+but for custom arguments the class UnspecifiedArgument can be used.
 
-   Two additional methods implemented so far:
+Two additional methods implemented so far:
 
 ```java
     exiftool.setImageMeta(File file, List<Argument> arguments, Map<? extends Tag, String> tags)
 ```
 
-   and
+and
 
 ```java
     exiftool.setImageMeta(File file, Format format, List<Argument> arguments, Map<? extends Tag, String> tags)
 ```
 
-   Example:
+Example:
 
 ```java
     List<Flag> argumentList = new List<>();
@@ -31,7 +31,7 @@
 
 #### How to use this package with maven
 
-Put the following snipped into your pom.xml under the <dependencies> block:
+Put the following snipped into your pom.xml under the \<dependencies\> block:
 
 ```xml
     <dependency>
