@@ -23,6 +23,12 @@ exiftool.setImageMeta(File file, Format format, List<Argument> arguments, Map<? 
 Example:
 
 ```java
+...
+import com.thebuzzmedia.exiftool.Argument;
+import com.thebuzzmedia.exiftool.core.StandardArgument;
+import com.thebuzzmedia.exiftool.core.UnspecifiedArgument;
+...
+
 List<Flag> argumentList = new List<>();
 argumentList.add(StandardArgument.IGNORE_MINOR); // supported flag
 arguments.add(new UnspecifiedArgument("-ext .cr2")); // custom argument/flag, format: "<name> <value>" or "<flag>"
