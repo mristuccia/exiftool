@@ -11,22 +11,22 @@ but for custom arguments the class UnspecifiedArgument can be used.
 Two additional methods implemented so far:
 
 ```java
-    exiftool.setImageMeta(File file, List<Argument> arguments, Map<? extends Tag, String> tags)
+exiftool.setImageMeta(File file, List<Argument> arguments, Map<? extends Tag, String> tags)
 ```
 
 and
 
 ```java
-    exiftool.setImageMeta(File file, Format format, List<Argument> arguments, Map<? extends Tag, String> tags)
+exiftool.setImageMeta(File file, Format format, List<Argument> arguments, Map<? extends Tag, String> tags)
 ```
 
 Example:
 
 ```java
-    List<Flag> argumentList = new List<>();
-    argumentList.add(StandardArgument.IGNORE_MINOR); // supported flag
-    arguments.add(new UnspecifiedArgument("-ext .cr2")); // custom argument/flag, format: "<name> <value>" or "<flag>"
-    exiftool.setImageMeta(file, argumentList, tagMap)
+List<Flag> argumentList = new List<>();
+argumentList.add(StandardArgument.IGNORE_MINOR); // supported flag
+arguments.add(new UnspecifiedArgument("-ext .cr2")); // custom argument/flag, format: "<name> <value>" or "<flag>"
+exiftool.setImageMeta(file, argumentList, tagMap)
 ```
 
 #### How to use this package with maven
