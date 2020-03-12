@@ -7,7 +7,20 @@
 1. Added the ability to pass extra flags and arguments. 
    So far only the "IGNORE_MINOR" flag is pre-configured, more will come.
    But for custom arguments the class UnspecifiedArgument can be used.
-   Here a sample:
+
+   Two additional methods implemented so far:
+
+```java
+    exiftool.setImageMeta(File file, List<Argument> arguments, Map<? extends Tag, String> tags)
+```
+
+   and
+
+```java
+    exiftool.setImageMeta(File file, Format format, List<Argument> arguments, Map<? extends Tag, String> tags)
+```
+
+   Example:
 
 ```java
     List<Flag> argumentList = new List<>();
