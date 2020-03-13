@@ -29,10 +29,10 @@ import com.thebuzzmedia.exiftool.core.StandardArgument;
 import com.thebuzzmedia.exiftool.core.UnspecifiedArgument;
 <...>
 
-List<Flag> argumentList = new List<>();
-argumentList.add(StandardArgument.IGNORE_MINOR); // supported flag
-argumentList.add(new UnspecifiedArgument("-ext .cr2")); // custom argument/flag, format: "<name> <value>" or "<flag>"
-exiftool.setImageMeta(file, argumentList, tagMap)
+List<Flag> arguments = new List<>();
+arguments.add(StandardArgument.IGNORE_MINOR); // supported flag
+arguments.add(new UnspecifiedArgument("-ext .cr2")); // custom argument/flag, format: "<name> <value>" or "<flag>"
+exiftool.setImageMeta(file, arguments, tagMap)
 ```
 
 #### How to use this package with maven
