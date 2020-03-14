@@ -47,6 +47,47 @@ Put the following snipped into your pom.xml under the \<dependencies\> block:
     </dependency>
 ```
 
+In order to access my GitHub package repository, you also need to configure an access profile/token inside the file <home folder>/.m2/settings.xml. Put something similar to this:
+
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <activeProfiles>
+    <activeProfile>github</activeProfile>
+  </activeProfiles>
+
+  <profiles>
+    <profile>
+      <id>github</id>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>https://repo1.maven.org/maven2</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+        <repository>
+          <id>github</id>
+          <name>GitHub mristuccia Apache Maven Packages</name>
+          <url>https://maven.pkg.github.com/mristuccia/exiftool</url>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+
+  <servers>
+    <server>
+      <id>github</id>
+      <username>mristuccia</username>
+      <password>60689c1fe3f4272a44c5e0749e58dae9feae263a</password>
+    </server>
+  </servers>
+</settings>
+```
+
 ### From the original README
 
 *The goal and main features of this fork did not changed, so this description is the same as the original library*
