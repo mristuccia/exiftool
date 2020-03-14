@@ -47,7 +47,7 @@ Put the following snipped into your pom.xml under the \<dependencies\> block:
     </dependency>
 ```
 
-In order to access my GitHub package repository, you also need to configure an access profile/token inside the file <home folder>/.m2/settings.xml. Put something similar to this:
+In order to access my GitHub package repository, you also need to configure an access profile/token inside the file \<home folder\>/.m2/settings.xml. Put something similar to this:
 
 ```xml
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
