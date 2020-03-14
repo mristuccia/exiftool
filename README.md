@@ -80,7 +80,7 @@ exiftool.setImageMeta(file, arguments, tagMap)
     <server>
       <id>github</id>
       <username>mristuccia</username>
-      <password>d2ac7f2903e43f15ef82c45d1aa5530203ce6efc</password>
+      <password>***ask-me-the-token-privately***</password>
     </server>
     <...>
   </servers>
