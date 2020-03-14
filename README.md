@@ -65,7 +65,7 @@ exiftool.setImageMeta(file, arguments, tagMap)
 </repositories>
 ```
 
-3. In order to access my GitHub package repository, you also need to configure an access token inside the file \<home folder\>/.m2/settings.xml. Put something similar to this:
+3. In order to access my GitHub package repository, you also need to configure an access token inside the file \<home folder\>/.m2/settings.xml. Put the following \<server\> snippet into it:
 
 ```xml
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
@@ -80,7 +80,7 @@ exiftool.setImageMeta(file, arguments, tagMap)
     <server>
       <id>github</id>
       <username>mristuccia</username>
-      <password>60689c1fe3f4272a44c5e0749e58dae9feae263a</password>
+      <password>d2ac7f2903e43f15ef82c45d1aa5530203ce6efc</password>
     </server>
     <...>
   </servers>
