@@ -17,6 +17,7 @@
 
 package com.thebuzzmedia.exiftool.process.command;
 
+import com.thebuzzmedia.exiftool.process.cmd.DefaultCommand;
 import com.thebuzzmedia.exiftool.process.Command;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Test;

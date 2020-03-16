@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.thebuzzmedia.exiftool.process.command;
+package com.thebuzzmedia.exiftool.process.cmd;
 
 import com.thebuzzmedia.exiftool.process.Command;
 

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.thebuzzmedia.exiftool.process.command;
+package com.thebuzzmedia.exiftool.process.cmd;
 
 import com.thebuzzmedia.exiftool.process.Command;
 
@@ -30,7 +30,7 @@ import static java.util.Collections.unmodifiableList;
 
 /**
  * Default implementation for {@link Command} interface.
- * This implementation should only be used with {@link com.thebuzzmedia.exiftool.process.command.CommandBuilder} builder.
+ * This implementation should only be used with {@link com.thebuzzmedia.exiftool.process.cmd.CommandBuilder} builder.
  */
 public final class DefaultCommand implements Command {
 

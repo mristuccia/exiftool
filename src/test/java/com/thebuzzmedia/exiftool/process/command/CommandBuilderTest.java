@@ -17,6 +17,7 @@
 
 package com.thebuzzmedia.exiftool.process.command;
 
+import com.thebuzzmedia.exiftool.process.cmd.CommandBuilder;
 import com.thebuzzmedia.exiftool.process.Command;
 import org.assertj.core.api.ThrowableAssert.ThrowingCallable;
 import org.junit.Test;

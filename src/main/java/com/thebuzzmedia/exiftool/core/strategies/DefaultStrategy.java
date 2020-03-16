@@ -25,7 +25,7 @@ import com.thebuzzmedia.exiftool.logs.LoggerFactory;
 import com.thebuzzmedia.exiftool.process.Command;
 import com.thebuzzmedia.exiftool.process.CommandExecutor;
 import com.thebuzzmedia.exiftool.process.OutputHandler;
-import com.thebuzzmedia.exiftool.process.command.CommandBuilder;
+import com.thebuzzmedia.exiftool.process.cmd.CommandBuilder;
 
 import java.io.IOException;
 import java.util.List;
