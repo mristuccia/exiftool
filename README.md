@@ -37,7 +37,7 @@ exiftool.setImageMeta(file, arguments, tagMap)
 
 #### How to use this package with maven
 
-1. Put the following dependency into your pom.xml under the \<repositories\> block:
+Put the following dependency into your pom.xml under the \<repositories\> block:
 
 ```xml
 <dependencies>
@@ -49,43 +49,6 @@ exiftool.setImageMeta(file, arguments, tagMap)
     </dependency>
     <...>
 </dependencies>
-```
-
-2. Put the following repository into your pom.xml under the \<repositories\> block:
-
-```xml
-<repositories>
-    <...>
-    <repository>
-        <id>github</id>
-        <name>GitHub mristuccia Apache Maven Packages</name>
-        <url>https://maven.pkg.github.com/mristuccia/exiftool</url>
-    </repository>
-    <...>
-</repositories>
-```
-
-3. In order to access my GitHub package repository, you also need to configure an access token inside the file \<home folder\>/.m2/settings.xml. Put the following \<server\> snippet into it:
-
-```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
-
-  <...>
-	
-  <servers>
-    <...>
-    <server>
-      <id>github</id>
-      <username>mristuccia</username>
-      <password>***ask-me-the-token-privately***</password>
-    </server>
-    <...>
-  </servers>
-
-</settings>
 ```
 
 ### From the original README
