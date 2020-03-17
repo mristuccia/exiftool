@@ -35,9 +35,7 @@ import static com.thebuzzmedia.exiftool.core.schedulers.SchedulerDuration.millis
 import static com.thebuzzmedia.exiftool.process.executor.CommandExecutors.newExecutor;
 
 /**
- * <h1>ExifToolBuilder</h1>
- * 
- * <h2>Builder for {@link ExifTool} instance.</h2>
+ * Builder for {@link ExifTool} instance.
  * This builder should be used to create instance of {@link com.thebuzzmedia.exiftool.ExifTool}.
  *
  * <h3>Settings</h3>
