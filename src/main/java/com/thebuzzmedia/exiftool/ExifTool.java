@@ -66,6 +66,8 @@ import static java.util.Collections.singleton;
  * (including Windows) so no portability issues are introduced into your
  * application by utilizing this class.
  *
+ * <h2>ExifTool</h2>
+ * 
  * <h3>Usage</h3>
  *
  * Assuming ExifTool is installed on the host system correctly and either in the

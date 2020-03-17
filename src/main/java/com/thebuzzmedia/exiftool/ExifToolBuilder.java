@@ -38,6 +38,8 @@ import static com.thebuzzmedia.exiftool.process.executor.CommandExecutors.newExe
  * Builder for {@link ExifTool} instance.
  * This builder should be used to create instance of {@link com.thebuzzmedia.exiftool.ExifTool}.
  *
+ * <h2>ExifToolBuilder</h2>
+ * 
  * <h3>Settings</h3>
  *
  * <h4>Path</h4>
