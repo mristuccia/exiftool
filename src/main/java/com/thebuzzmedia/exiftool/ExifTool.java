@@ -67,7 +67,7 @@ import static java.util.Collections.singleton;
  * application by utilizing this class.
  *
  * <h2>ExifTool</h2>
- * 
+ *
  * <h3>Usage</h3>
  *
  * Assuming ExifTool is installed on the host system correctly and either in the
@@ -409,6 +409,19 @@ public class ExifTool implements AutoCloseable {
 	}
 
 	/**
+         * Parse image data
+         *
+         * @param image
+         * @param arguments
+         * @return
+         * @throws IOException
+         */
+        public Map<Tag, String> getImageMeta(File image, List<Argument> arguments) throws IOException {
+		return getImageMeta(image, StandardFormat.NUMERIC, arguments);
+	}
+
+
+        /**
 	 * Parse image metadata for all tags.
 	 *
 	 * @param image Image.
@@ -425,6 +438,19 @@ public class ExifTool implements AutoCloseable {
 
 		return getImageMeta(image, format, singleton(new UnspecifiedTag("All")), new AllTagHandler());
 	}
+
+	/**
+         * Parse image data
+         *
+         * @param image
+         * @param format
+         * @param arguments
+         * @return
+         * @throws IOException
+         */
+        public Map<Tag, String> getImageMeta(File image, Format format, List<Argument> arguments) throws IOException {
+            return getImageMeta(image, format, arguments, singleton(new UnspecifiedTag("All")), new AllTagHandler());
+        }
 
 	/**
 	 * Parse image metadata.
@@ -467,13 +493,39 @@ public class ExifTool implements AutoCloseable {
 		return getImageMeta(image, format, tags, tagHandler);
 	}
 
-	private Map<Tag, String> getImageMeta(File image, Format format, Collection<? extends Tag> tags, TagHandler tagHandler) throws IOException {
+	/**
+         * Parse image metadata
+         *
+         * @param image
+         * @param format
+         * @param tags
+         * @param tagHandler
+         * @return
+         * @throws IOException
+         */
+        private Map<Tag, String> getImageMeta(File image, Format format, Collection<? extends Tag> tags, TagHandler tagHandler) throws IOException {
+            return getImageMeta(image, format, new ArrayList<Argument>(), tags, tagHandler);
+        }
+
+        /**
+         * Parse image metadata
+         *
+         * @param image
+         * @param format
+         * @param arguments
+         * @param tags
+         * @param tagHandler
+         * @return
+         * @throws IOException
+         */
+        private Map<Tag, String> getImageMeta(File image, Format format, List<Argument> arguments, Collection<? extends Tag> tags, TagHandler tagHandler) throws IOException {
 		notNull(image, "Image cannot be null and must be a valid stream of image data.");
+                notNull(arguments, "Arguments cannot be null.");
 		notNull(format, "Format cannot be null.");
 		isReadable(image, "Unable to read the given image [%s], ensure that the image exists at the given withPath and that the executing Java process has permissions to read it.", image);
 
 		// Build list of exiftool arguments.
-		List<String> args = getImageMetaArguments(format, image, tags);
+		List<String> args = getImageMetaArguments(format, arguments, image, tags);
 
 		// Execute ExifTool command
 		strategy.execute(executor, path, args, tagHandler);
@@ -560,10 +612,19 @@ public class ExifTool implements AutoCloseable {
 	 * @param tags List of tags.
 	 * @return List of associated arguments.
 	 */
-	private List<String> getImageMetaArguments(Format format, File image, Collection<? extends Tag> tags) {
-		// Create list of arguments: deduce expected number of arguments.
+	private List<String> getImageMetaArguments(Format format, List<Argument> arguments, File image, Collection<? extends Tag> tags) {
+
+                /**
+                 * Builds the final argument list
+                 */
+                List<String> extraArgs = new ArrayList<>();
+                for (Argument currentArg: arguments) {
+                    extraArgs.addAll(currentArg.getArgs());
+                }
+
+                // Create list of arguments: deduce expected number of arguments.
 		List<String> formatArgs = format.getArgs();
-		int nbArgs = tags.size() + formatArgs.size() + 3;
+		int nbArgs = tags.size() + formatArgs.size() + extraArgs.size() + 3;
 		List<String> args = new ArrayList<>(nbArgs);
 
 		// Format output.
@@ -597,7 +658,6 @@ public class ExifTool implements AutoCloseable {
 	 * @return List of associated arguments.
 	 */
 	private List<String> setImageMetaArguments(Format format, List<Argument> arguments, File image, Map<? extends Tag, String> tags) {
-		List<String> formatArgs = format.getArgs();
 
                 /**
                  * Builds the final argument list
@@ -607,6 +667,8 @@ public class ExifTool implements AutoCloseable {
                     extraArgs.addAll(currentArg.getArgs());
                 }
 
+                // Create list of arguments: deduce expected number of arguments.
+		List<String> formatArgs = format.getArgs();
                 int nbArgs = tags.size() + formatArgs.size() + extraArgs.size() + 3;
 		List<String> args = new ArrayList<>(nbArgs);
 

@@ -47,6 +47,7 @@ import java.util.Map;
 import static com.thebuzzmedia.exiftool.tests.MockitoTestUtils.anyListOf;
 import static com.thebuzzmedia.exiftool.tests.TagTestUtils.parseTags;
 import static java.util.Arrays.asList;
+import java.util.Collection;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
@@ -118,11 +119,25 @@ public class ExifTool_getImageMeta_Test {
 	}
 
 	@Test
+	public void it_should_fail_if_arguments_is_null() {
+		ThrowingCallable getImageMeta = new ThrowingCallable() {
+			@Override
+			public void call() throws Throwable {
+				exifTool.getImageMeta(mock(File.class), (List<Argument>) null);
+			}
+		};
+
+		assertThatThrownBy(getImageMeta)
+				.isInstanceOf(NullPointerException.class)
+				.hasMessage("Arguments cannot be null.");
+	}
+
+	@Test
 	public void it_should_fail_if_tags_is_null() {
 		ThrowingCallable getImageMeta = new ThrowingCallable() {
 			@Override
 			public void call() throws Throwable {
-				exifTool.getImageMeta(mock(File.class), StandardFormat.HUMAN_READABLE, null);
+				exifTool.getImageMeta(mock(File.class), StandardFormat.HUMAN_READABLE, (Collection<? extends Tag>) null);
 			}
 		};
 

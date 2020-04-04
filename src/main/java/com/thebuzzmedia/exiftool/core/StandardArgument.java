@@ -31,5 +31,26 @@ public enum StandardArgument implements Argument
         public List<String> getArgs() {
                 return singletonList("-m");
         }
+    },
+
+    FORMAT_METADATA_AS_EXIFTOOL_ARGUMENTS {
+        @Override
+        public List<String> getArgs() {
+                return singletonList("-args");
+        }
+    },
+
+    EXTRACT_UNKNOWN_TAGS {
+        @Override
+        public List<String> getArgs() {
+                return singletonList("-u");
+        }
+    },
+
+    NO_PRINT_CONVERSION {
+        @Override
+        public List<String> getArgs() {
+                return singletonList("-n");
+        }
     };
 }
