@@ -4,8 +4,12 @@
 #
 # 1. Sets the new version in pom.xml as SNAPSHOT
 #
-mvn release:prepare
-mvn release:perform
+
+# Without tests
+# mvn clean deploy -Prelease -Dmaven.test.skip=true
+
+# With tests
+mvn clean deploy -Prelease -Dmaven.test.skip=true
 
 #
 # Perform the following commands after the release 

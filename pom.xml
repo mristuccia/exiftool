@@ -59,7 +59,7 @@
         <connection>scm:git:git@github.com:mristuccia/exiftool.git</connection>
         <developerConnection>scm:git:git@github.com:mristuccia/exiftool.git</developerConnection>
         <url>https://github.com/mristuccia/exiftool</url>
-        <tag>exiftool-lib-2.5.3</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <!--distributionManagement>
