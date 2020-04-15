@@ -5,21 +5,20 @@
 #### Forked to add some features for personal need:
 
 Added the ability to pass extra flags and arguments. 
-So far only the "IGNORE_MINOR" flag is pre-configured, more will come,
-but for custom arguments the class UnspecifiedArgument can be used.
+So far only the following pre-configured flags are supported:
+* StandardArgument.EXTRACT_UNKNOWN_TAGS (Corresponding ExifTool flag: "-u")
+* StandardArgument.FORMAT_METADATA_AS_EXIFTOOL_ARGUMENTS (Corresponding ExifTool flag: "-args")
+* StandardArgument.IGNORE_MINOR (Corresponding ExifTool flag: "-m")
+* StandardArgument.NO_PRINT_CONVERSION (Corresponding ExifTool flag: "-n")
 
-Two additional methods implemented so far:
+However for custom arguments the class UnspecifiedArgument can be used (see samples below).
+
+The following additional getMetadata methods have been implemented so far:
 
 ```java
-exiftool.setImageMeta(File file, List<Argument> arguments, Map<? extends Tag, String> tags)
+Map<Tag, String> getImageMeta(File image, List<Argument> arguments)
+Map<Tag, String> getImageMeta(File image, Format format, List<Argument> arguments)
 ```
-
-and
-
-```java
-exiftool.setImageMeta(File file, Format format, List<Argument> arguments, Map<? extends Tag, String> tags)
-```
-
 Example:
 
 ```java
@@ -35,6 +34,28 @@ arguments.add(new UnspecifiedArgument("-ext .cr2")); // custom argument/flag, fo
 exiftool.setImageMeta(file, arguments, tagMap)
 ```
 
+The following additional setMetadata methods have been implemented so far:
+
+```java
+void setImageMeta(File image, List<Argument> arguments, Map<? extends Tag, String> tags)
+void setImageMeta(File image, Format format, List<Argument> arguments, Map<? extends Tag, String> tags)
+```
+
+Example:
+
+```java
+<...>
+import com.thebuzzmedia.exiftool.Argument;
+import com.thebuzzmedia.exiftool.core.StandardArgument;
+import com.thebuzzmedia.exiftool.core.UnspecifiedArgument;
+<...>
+
+List<Flag> arguments = new List<>();
+arguments.add(StandardArgument.EXTRACT_UNKNOWN_TAGS); // supported flag
+arguments.add(new UnspecifiedArgument("-ext .cr2")); // custom argument/flag, format: "<name> <value>" or "<flag>"
+Map<Tag, String> imageMetadata = this.exifTool.getImageMeta(file, arguments);
+```
+
 #### How to use this package with maven
 
 Put the following dependency into your pom.xml under the \<repositories\> block:
@@ -45,7 +66,7 @@ Put the following dependency into your pom.xml under the \<repositories\> block:
     <dependency>
         <groupId>com.github.mristuccia</groupId>
         <artifactId>exiftool-lib</artifactId>
-        <version>2.5.2</version>
+        <version>2.5.3</version>
     </dependency>
     <...>
 </dependencies>
