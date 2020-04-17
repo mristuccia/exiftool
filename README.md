@@ -13,7 +13,7 @@ So far only the following pre-configured flags are supported:
 
 However for custom arguments the class UnspecifiedArgument can be used (see samples below).
 
-The following additional getMetadata methods have been implemented so far:
+The following additional getImageMeta() methods have been implemented so far:
 
 ```java
 Map<Tag, String> getImageMeta(File image, List<Argument> arguments)
@@ -34,7 +34,7 @@ arguments.add(new UnspecifiedArgument("-ext .cr2")); // custom argument/flag, fo
 exiftool.setImageMeta(file, arguments, tagMap)
 ```
 
-The following additional setMetadata methods have been implemented so far:
+The following additional setImageMeta() methods have been implemented so far:
 
 ```java
 void setImageMeta(File image, List<Argument> arguments, Map<? extends Tag, String> tags)
